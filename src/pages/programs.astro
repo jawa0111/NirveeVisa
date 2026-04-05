@@ -99,6 +99,34 @@ const programs = [
     display: flex;
     flex-direction: column;
     padding: 48px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    border-radius: 16px;
+  }
+
+  .program-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.08));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+  }
+
+  .program-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+    border-color: rgba(212, 175, 55, 0.3);
+  }
+
+  .program-card:hover::before {
+    opacity: 1;
   }
 
   .program-header {
@@ -116,11 +144,42 @@ const programs = [
     padding: 16px;
     border-radius: 12px;
     border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .icon::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--gold), rgba(212, 175, 55, 0.3), var(--gold));
+    border-radius: 12px;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+  }
+
+  .program-card:hover .icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+  }
+
+  .program-card:hover .icon::after {
+    opacity: 1;
   }
 
   .program-header h2 {
     margin: 0;
     font-size: 1.8rem;
+    transition: all 0.3s ease;
+  }
+
+  .program-card:hover .program-header h2 {
+    color: var(--gold);
+    transform: translateX(4px);
   }
 
   .program-card p {

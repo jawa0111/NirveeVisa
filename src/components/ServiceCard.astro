@@ -20,14 +20,44 @@ const { icon, title, description, link } = Astro.props;
 
 <style>
   .service-card {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(212, 175, 55, 0.05));
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     height: 100%;
+    padding: 32px;
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.08));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+  }
+
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+    border-color: rgba(212, 175, 55, 0.3);
+  }
+
+  .service-card:hover::before {
+    opacity: 1;
   }
 
   .icon-wrapper {
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(212, 175, 55, 0.15));
     width: 64px;
     height: 64px;
     display: flex;
@@ -38,12 +68,38 @@ const { icon, title, description, link } = Astro.props;
     font-size: 1.8rem;
     color: var(--gold);
     border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .icon-wrapper::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--gold), rgba(212, 175, 55, 0.3), var(--gold));
+    border-radius: 12px;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+  }
+
+  .service-card:hover .icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+  }
+
+  .service-card:hover .icon-wrapper::after {
+    opacity: 1;
   }
 
   h3 {
     margin-bottom: 16px;
     font-size: 1.5rem;
     font-weight: 600;
+    transition: all 0.3s ease;
   }
 
   p {
@@ -51,6 +107,16 @@ const { icon, title, description, link } = Astro.props;
     margin-bottom: 30px;
     font-size: 1rem;
     flex-grow: 1;
+    transition: all 0.3s ease;
+  }
+
+  .service-card:hover h3 {
+    color: var(--gold);
+    transform: translateX(4px);
+  }
+
+  .service-card:hover p {
+    color: rgba(255, 255, 255, 0.9);
   }
 
   .link-more {
@@ -63,13 +129,37 @@ const { icon, title, description, link } = Astro.props;
     display: flex;
     align-items: center;
     gap: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .link-more::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), rgba(212, 175, 55, 0.6));
+    transition: width 0.3s ease;
   }
 
   .link-more span {
-    transition: var(--transition);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+  }
+
+  .service-card:hover .link-more {
+    color: rgba(255, 255, 255, 0.95);
+    transform: translateX(2px);
+  }
+
+  .service-card:hover .link-more::before {
+    width: 100%;
   }
 
   .service-card:hover .link-more span {
-    transform: translateX(5px);
+    transform: translateX(8px);
+    color: var(--gold);
   }
 </style>
