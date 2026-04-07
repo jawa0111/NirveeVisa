@@ -20,7 +20,7 @@ const { icon, title, description, link } = Astro.props;
 
 <style>
   .service-card {
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(212, 175, 55, 0.05));
+    background: var(--card-bg);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -30,7 +30,8 @@ const { icon, title, description, link } = Astro.props;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(212, 175, 55, 0.1);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
   }
 
   .service-card::before {
@@ -40,7 +41,7 @@ const { icon, title, description, link } = Astro.props;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.08));
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(219, 39, 119, 0.05));
     opacity: 0;
     transition: opacity 0.4s ease;
     z-index: -1;
@@ -48,8 +49,8 @@ const { icon, title, description, link } = Astro.props;
 
   .service-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
-    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.15);
+    border-color: var(--primary-pink);
   }
 
   .service-card:hover::before {
@@ -57,7 +58,7 @@ const { icon, title, description, link } = Astro.props;
   }
 
   .icon-wrapper {
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(212, 175, 55, 0.15));
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(219, 39, 119, 0.1));
     width: 64px;
     height: 64px;
     display: flex;
@@ -66,8 +67,8 @@ const { icon, title, description, link } = Astro.props;
     border-radius: 12px;
     margin-bottom: 24px;
     font-size: 1.8rem;
-    color: var(--gold);
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    color: var(--primary-purple);
+    border: 1px solid rgba(124, 58, 237, 0.1);
     transition: all 0.3s ease;
     position: relative;
   }
@@ -79,7 +80,7 @@ const { icon, title, description, link } = Astro.props;
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(45deg, var(--gold), rgba(212, 175, 55, 0.3), var(--gold));
+    background: var(--primary-gradient);
     border-radius: 12px;
     opacity: 0;
     z-index: -1;
@@ -88,7 +89,7 @@ const { icon, title, description, link } = Astro.props;
 
   .service-card:hover .icon-wrapper {
     transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.25);
   }
 
   .service-card:hover .icon-wrapper::after {
@@ -111,18 +112,18 @@ const { icon, title, description, link } = Astro.props;
   }
 
   .service-card:hover h3 {
-    color: var(--gold);
+    color: var(--primary-purple);
     transform: translateX(4px);
   }
 
   .service-card:hover p {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-main);
   }
 
   .link-more {
     font-family: var(--font-heading);
     font-weight: 500;
-    color: var(--gold);
+    color: var(--primary-purple);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-size: 0.9rem;
@@ -140,7 +141,7 @@ const { icon, title, description, link } = Astro.props;
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--gold), rgba(212, 175, 55, 0.6));
+    background: var(--primary-gradient);
     transition: width 0.3s ease;
   }
 
@@ -150,7 +151,7 @@ const { icon, title, description, link } = Astro.props;
   }
 
   .service-card:hover .link-more {
-    color: rgba(255, 255, 255, 0.95);
+    color: var(--primary-purple);
     transform: translateX(2px);
   }
 
@@ -160,6 +161,6 @@ const { icon, title, description, link } = Astro.props;
 
   .service-card:hover .link-more span {
     transform: translateX(8px);
-    color: var(--gold);
+    color: var(--primary-purple);
   }
 </style>

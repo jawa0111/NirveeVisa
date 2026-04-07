@@ -73,8 +73,8 @@ const team = [
 
 <style>
   .page-header {
-    background: linear-gradient(to bottom, var(--obsidian-light), var(--obsidian));
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--background);
+    border-bottom: 1px solid var(--border-light);
     padding-top: 150px;
     padding-bottom: 80px;
   }
@@ -120,7 +120,7 @@ const team = [
 
   .value-icon {
     font-size: 1.5rem;
-    color: var(--gold);
+    color: var(--primary-purple);
     flex-shrink: 0;
     line-height: 1;
     margin-top: 4px;
@@ -133,7 +133,7 @@ const team = [
 
   .image-placeholder {
     height: 500px;
-    background: linear-gradient(135deg, rgba(10, 10, 10, 0.8), rgba(59, 130, 246, 0.1));
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(219, 39, 119, 0.1));
     background-size: cover;
     background-position: center;
     position: relative;
@@ -143,11 +143,11 @@ const team = [
   }
 
   .placeholder-text {
-    background: rgba(10, 10, 10, 0.8);
+    background: var(--white);
     backdrop-filter: blur(10px);
     padding: 16px 32px;
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    color: var(--gold);
+    border: 1px solid var(--card-border);
+    color: var(--primary-purple);
     font-family: var(--font-heading);
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -156,8 +156,8 @@ const team = [
   }
 
   .bg-darker {
-    background-color: var(--obsidian-lighter);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: var(--background);
+    border-top: 1px solid var(--border-light);
   }
 
   .mb-60 { margin-bottom: 60px; }
@@ -169,27 +169,28 @@ const team = [
   }
 
   .team-card {
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--white);
+    border: 1px solid var(--card-border);
     border-radius: 12px;
     overflow: hidden;
     transition: var(--transition);
+    box-shadow: var(--card-shadow);
   }
 
   .team-card:hover {
     transform: translateY(-10px);
-    border-color: rgba(212, 175, 55, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: var(--primary-pink);
+    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.15);
   }
 
   .team-avatar {
     height: 250px;
-    background: rgba(212, 175, 55, 0.05);
+    background: rgba(124, 58, 237, 0.05);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--border-light);
   }
 
   .team-info {

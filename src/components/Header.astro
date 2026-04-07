@@ -39,7 +39,7 @@ const navLinks = [
   <div class="container nav-container">
     <div class="logo-container">
       <div class="logo">
-        <a href="/">Nirvee <span style="color: var(--gold);">Visa</span></a>
+        <a href="/">Nirvee <span class="accent-text">Visa</span></a>
       </div>
       <div class="logo-sub">
         <span class="gold-text">VISA & IMMIGRATION EXPERTS PVT LTD</span>
@@ -54,7 +54,7 @@ const navLinks = [
           </li>
         ))}
       </ul>
-      <a href="/contact" class="btn btn-outline eligibility-btn">Start Journey</a>
+      <a href="/contact" class="btn btn-primary btn-sm">Start Journey</a>
     </nav>
 
     <div class="mobile-menu-btn">
@@ -68,9 +68,11 @@ const navLinks = [
 <style>
   /* Top Bar Styles */
   .top-bar {
-    background-color: #0b0b0b;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-    padding: 8px 0;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-light);
+    padding: 10px 0;
+    position: relative;
+    z-index: 1001;
   }
 
   .top-bar-container {
@@ -99,33 +101,33 @@ const navLinks = [
   }
 
   .top-bar-link {
-    color: #d4af37;
+    color: var(--text-main);
     text-decoration: none;
     font-size: 0.8rem;
     display: flex;
     align-items: center;
     gap: 6px;
-    opacity: 0.9;
+    opacity: 0.8;
     transition: 0.3s;
   }
 
   .top-bar-link:hover {
-    opacity: 1;
+    color: var(--primary-purple);
   }
 
   .social-icons a {
-    color: #d4af37;
+    color: var(--text-muted);
     transition: 0.3s;
     opacity: 0.9;
   }
 
   .social-icons a:hover {
-    opacity: 1;
+    color: var(--primary-purple);
     transform: translateY(-1px);
   }
 
   .top-bar-phone {
-    color: #d4af37;
+    color: var(--primary-purple);
     text-decoration: none;
     font-size: 0.8rem;
     font-weight: 600;
@@ -138,17 +140,19 @@ const navLinks = [
 
   .top-bar-phone:hover {
     opacity: 1;
+    color: var(--primary-pink);
   }
 
   /* Core Styles */
   .header {
-    background-color: #0b0b0b; /* Obsidian */
-    padding: 20px 0;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 16px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-light);
   }
 
   .nav-container {
@@ -168,24 +172,28 @@ const navLinks = [
   }
 
   .logo a {
-    color: #ffffff;
+    color: var(--text-main);
     font-size: 1.8rem;
     font-weight: 800;
-    letter-spacing: 1px;
+    letter-spacing: -0.5px;
     text-decoration: none;
-    text-transform: none;
+  }
+
+  .accent-text {
+    color: var(--primary-pink);
   }
 
   .logo-sub {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 1.2px;
-    margin-top: 4px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 2px;
+    opacity: 0.8;
   }
 
-  /* THIS IS THE FIX FOR THE COLOR */
-  .gold-text {
-    color: #d4af37 !important; /* Forces the Gold color from your image's blue */
+  .btn-sm {
+    padding: 10px 24px;
+    font-size: 0.85rem;
   }
 
   /* Navigation */
@@ -204,7 +212,7 @@ const navLinks = [
   }
 
   .nav-link {
-    color: #e0e0e0;
+    color: var(--text-main);
     text-decoration: none;
     font-weight: 500;
     font-size: 0.95rem;
@@ -212,26 +220,9 @@ const navLinks = [
   }
 
   .nav-link:hover {
-    color: #d4af37;
+    color: var(--primary-purple);
   }
 
-  /* Button Styling */
-  .eligibility-btn {
-    border: 1px solid #d4af37;
-    color: #d4af37;
-    padding: 10px 24px;
-    font-size: 0.85rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    text-transform: uppercase;
-    transition: 0.3s;
-  }
-
-  .eligibility-btn:hover {
-    background: #d4af37;
-    color: #0b0b0b;
-  }
 
   /* Mobile */
   @media (max-width: 992px) {
@@ -250,7 +241,7 @@ const navLinks = [
     .mobile-menu-btn span {
       width: 28px;
       height: 2px;
-      background-color: white;
+      background-color: var(--text-main);
     }
   }
 

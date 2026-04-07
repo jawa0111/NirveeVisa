@@ -9,119 +9,66 @@ interface Props {
 const { title, subtitle, ctaText, ctaLink } = Astro.props;
 ---
 
-<section class="hero">
-  <div class="overlay"></div>
-  <div class="container hero-content">
-    <div class="hero-text-wrapper">
-      <div class="badge">Premium Consultancy</div>
-      <h1 class="hero-title">{title}</h1>
-      <p class="hero-subtitle">{subtitle}</p>
-      <div class="hero-actions">
-        <a href={ctaLink} class="btn btn-primary">{ctaText}</a>
-        <a href="/programs" class="btn btn-outline">Explore Programs</a>
+<section id="hero-architectural" style="display: flex; height: 100vh; min-height: 800px; background-color: #ffffff; align-items: center; justify-content: center; position: relative; overflow: hidden; margin-top: -100px; padding-top: 100px; width: 100%;">
+  
+  <!-- BACKGROUND WAVE DESIGN -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;">
+    <svg width="100%" height="100%" viewBox="0 0 1000 1000" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="mainCurveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#FF758C;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+        </linearGradient>
+      </defs>
+      <!-- Main Swoosh -->
+      <path d="M250,1000 Q550,850 450,450 T800,0 L1000,0 L1000,1000 Z" fill="url(#mainCurveGrad)" />
+      <!-- Shadow/Depth Swoosh -->
+      <path d="M0,1000 Q400,900 300,500 T650,0 L1000,0 L1000,1000 Z" fill="#6D28D9" fill-opacity="0.1" />
+      <!-- Bottom Left Accent -->
+      <path d="M0,1000 Q200,950 150,750 L0,700 Z" fill="#FF758C" fill-opacity="0.9" />
+      <!-- Top Right Accent -->
+      <circle cx="950" cy="50" r="180" fill="#ffffff" fill-opacity="0.3" />
+    </svg>
+  </div>
+
+  <!-- CONTENT LAYER -->
+  <div class="container" style="position: relative; z-index: 10; display: flex; justify-content: center; text-align: center; width: 100%;">
+    <div style="max-width: 900px;">
+      <div style="display: inline-block; padding: 10px 24px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.4); color: #ffffff; border-radius: 100px; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 30px;">
+        Premium Consultancy
+      </div>
+      
+      <h1 style="font-size: clamp(3rem, 8vw, 6rem); font-weight: 800; color: #1E1B4B; line-height: 1.05; letter-spacing: -3.5px; margin-bottom: 25px; text-shadow: 0 10px 30px rgba(0,0,0,0.05); font-family: 'Outfit', sans-serif;">
+        {title}
+      </h1>
+      
+      <p style="font-size: clamp(1.1rem, 3vw, 1.6rem); color: #4B5563; max-width: 750px; margin: 0 auto 50px; font-weight: 400; line-height: 1.5; font-family: 'Inter', sans-serif;">
+        {subtitle}
+      </p>
+      
+      <div style="display: flex; justify-content: center; gap: 20px;">
+        <a href={ctaLink} style="padding: 18px 40px; background: linear-gradient(135deg, #7C3AED 0%, #DB2777 100%); color: white; border-radius: 50px; font-weight: 700; text-decoration: none; box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);">
+          Consult With Us
+        </a>
+        <a href="/programs" style="padding: 18px 40px; border: 2px solid rgba(255, 255, 255, 0.5); color: #ffffff; border-radius: 50px; font-weight: 700; text-decoration: none;">
+          Explore Programs
+        </a>
       </div>
     </div>
   </div>
+
 </section>
 
-<style>
-  .hero {
-    height: 90vh;
-    min-height: 700px;
-    background-image: url('/elegant-abstract-world-map-featuring-golden-lines-black-background-representation-showcases-symbolizing-global-357525222.webp');
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-top: -85px; /* Offset the header */
-    padding-top: 85px;
-    image-rendering: high-quality;
-    animation: mapDrift 40s linear infinite alternate;
-  }
-
-  @keyframes mapDrift {
-    0% { background-position: 0% center; background-size: 100%; }
-    100% { background-position: 10% center; background-size: 110%; }
-  }
-
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(10, 10, 10, 0.6) 50%, rgba(20, 20, 20, 0.8) 100%);
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-  }
-
-  .hero-text-wrapper {
-    max-width: 850px;
-  }
-
-  .badge {
-    display: inline-block;
-    padding: 6px 16px;
-    background: rgba(212, 175, 55, 0.1);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    color: var(--gold);
-    border-radius: 4px;
-    font-size: 0.85rem;
-    font-family: var(--font-heading);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 30px;
-    animation: fadeInUp 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
-  }
-
-  .hero-title {
-    color: var(--white);
-    font-size: 4.5rem;
-    line-height: 1.1;
-    margin-bottom: 30px;
-    animation: fadeInUp 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) 0.1s backwards;
-  }
-
-  .hero-subtitle {
-    font-size: 1.35rem;
-    margin-bottom: 40px;
-    color: var(--text-muted);
-    font-weight: 300;
-    max-width: 650px;
-    animation: fadeInUp 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) 0.2s backwards;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 24px;
-    animation: fadeInUp 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) 0.3s backwards;
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @media (max-width: 992px) {
-    .hero-title { font-size: 3.5rem; }
-  }
-
+<style is:inline>
+  /* Fallback and responsive styles that can't be inlined easily */
   @media (max-width: 768px) {
-    .hero-title { font-size: 2.8rem; }
-    .hero-subtitle { font-size: 1.1rem; }
-    .hero-actions { flex-direction: column; gap: 16px; }
-    .hero-actions .btn { width: 100%; }
+    #hero-architectural { 
+      padding-top: 150px !important;
+      height: auto !important;
+      min-height: 100vh !important;
+    }
+    #hero-architectural .elite-actions {
+      flex-direction: column !important;
+    }
   }
 </style>

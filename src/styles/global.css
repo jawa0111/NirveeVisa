@@ -1,20 +1,22 @@
 :root {
-  /* Premium Dark Theme Variables */
-  --obsidian: #000000;
-  --obsidian-light: #000000;
-  --obsidian-lighter: #000000;
-  --gold: #4F6BFF;
-  /* Blue-to-Purple Gradient */
-  --gold-light: #6C84FF;
-  --gold-dark: #8E2DE2;
-  --text-main: #F5F5F5;
-  --text-muted: #A3A3A3;
+  /* Vibrant Purple & Pink Theme */
+  --primary-purple: #7C3AED;
+  --primary-pink: #DB2777;
+  --primary-gradient: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-pink) 100%);
+  --background: #FDFCFE;
   --white: #FFFFFF;
+  --text-main: #1E1B4B;
+  --text-muted: #6B7280;
+  --border-light: rgba(124, 58, 237, 0.1);
+
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --card-border: rgba(124, 58, 237, 0.15);
+  --card-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.1), 0 8px 10px -6px rgba(124, 58, 237, 0.1);
 
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
 
-  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -25,7 +27,7 @@
 
 body {
   font-family: var(--font-body);
-  background-color: var(--obsidian);
+  background-color: var(--background);
   color: var(--text-main);
   line-height: 1.6;
   overflow-x: hidden;
@@ -49,7 +51,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
-  color: var(--white);
+  color: var(--text-main);
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -85,7 +87,6 @@ p.lead {
   justify-content: center;
   padding: 14px 32px;
   border-radius: 50px;
-  /* Fully rounded pill shape for a modern premium look */
   font-family: var(--font-heading);
   font-weight: 500;
   font-size: 1.1rem;
@@ -97,26 +98,27 @@ p.lead {
 }
 
 .btn-primary {
-  background: linear-gradient(90deg, var(--gold), var(--gold-dark));
-  color: var(--obsidian);
-  box-shadow: 0 4px 15px rgba(142, 45, 226, 0.2);
+  background: var(--primary-gradient);
+  color: var(--white);
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(142, 45, 226, 0.3);
-  background: linear-gradient(90deg, var(--gold-light), var(--gold-dark));
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+  filter: brightness(1.1);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--gold);
-  border: 1px solid var(--gold);
+  color: var(--primary-purple);
+  border: 1px solid var(--primary-purple);
 }
 
 .btn-outline:hover {
-  background: rgba(212, 175, 55, 0.1);
+  background: rgba(124, 58, 237, 0.05);
   transform: translateY(-2px);
+  border-color: var(--primary-pink);
 }
 
 /* Layout */
@@ -142,25 +144,27 @@ p.lead {
 
 /* Glassmorphism / Cards */
 .glass-card {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 12px;
   padding: 40px;
   transition: var(--transition);
+  box-shadow: var(--card-shadow);
 }
 
 .glass-card:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--primary-pink);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(124, 58, 237, 0.15);
 }
 
-/* Text Highlights */
+/* Gold Text update for new theme - we'll use pink/purple accent */
 .gold-text {
-  color: var(--gold);
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {
@@ -169,7 +173,7 @@ p.lead {
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .section-padding {

@@ -59,8 +59,8 @@ import ContactForm from '../components/ContactForm.astro';
 
 <style>
   .page-header {
-    background: linear-gradient(to bottom, var(--obsidian-light), var(--obsidian));
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--background);
+    border-bottom: 1px solid var(--border-light);
     padding-top: 150px;
     padding-bottom: 80px;
   }
@@ -104,8 +104,8 @@ import ContactForm from '../components/ContactForm.astro';
   }
 
   .icon-wrapper {
-    background: rgba(212, 175, 55, 0.05);
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    background: rgba(124, 58, 237, 0.05);
+    border: 1px solid rgba(124, 58, 237, 0.2);
     width: 60px;
     height: 60px;
     border-radius: 12px;
@@ -113,12 +113,22 @@ import ContactForm from '../components/ContactForm.astro';
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    transition: var(--transition);
   }
 
   .icon {
     font-size: 2rem;
-    color: var(--gold);
+    color: var(--primary-purple);
     line-height: 1;
+  }
+
+  .info-item:hover .icon-wrapper {
+    background: var(--primary-gradient);
+    border-color: transparent;
+  }
+
+  .info-item:hover .icon {
+    color: var(--white);
   }
 
   .info-item h4 { margin-bottom: 8px; font-size: 1.1rem; }

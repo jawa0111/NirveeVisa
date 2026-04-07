@@ -32,8 +32,8 @@ const { name, role, content, image = '👤' } = Astro.props;
 
   .quote-icon {
     font-size: 5rem;
-    color: var(--gold);
-    opacity: 0.15;
+    color: var(--primary-purple);
+    opacity: 0.1;
     position: absolute;
     top: 20px;
     right: 40px;
@@ -58,15 +58,15 @@ const { name, role, content, image = '👤' } = Astro.props;
     align-items: center;
     gap: 16px;
     margin-top: auto;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid var(--border-light);
     padding-top: 20px;
   }
 
   .avatar {
     width: 48px;
     height: 48px;
-    background: rgba(212, 175, 55, 0.1);
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    background: rgba(124, 58, 237, 0.1);
+    border: 1px solid rgba(124, 58, 237, 0.2);
     border-radius: 50%;
     display: flex;
     align-items: center;

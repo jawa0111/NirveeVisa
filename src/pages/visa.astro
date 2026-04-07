@@ -71,11 +71,14 @@ const countries = [
 
 <style>
   .page-header {
-    background-color: var(--primary-color);
-    color: var(--white);
+    background: var(--background);
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-main);
+    padding-top: 150px;
+    padding-bottom: 80px;
   }
 
-  .page-header h1 { color: var(--white); }
+  .page-header h1 { color: var(--text-main); }
   
   .subtitle {
     margin-top: 20px;
@@ -93,29 +96,37 @@ const countries = [
   }
 
   .country-card {
-    background: var(--white);
+    background: var(--card-bg);
     padding: 30px;
     border-radius: 12px;
-    border: 1px solid var(--gray-light);
+    border: 1px solid var(--card-border);
     display: flex;
     flex-direction: column;
     transition: var(--transition);
+    box-shadow: var(--card-shadow);
   }
 
-  .country-card:hover { border-color: var(--accent-gold); transform: translateY(-5px); }
+  .country-card:hover { 
+    border-color: var(--primary-pink); 
+    transform: translateY(-8px); 
+    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.15);
+  }
 
   .country-top { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
   .flag { font-size: 2.5rem; }
   .country-top h3 { font-size: 1.5rem; }
 
   .categories { margin-bottom: 25px; }
-  .categories h4 { font-size: 0.9rem; color: var(--secondary-color); margin-bottom: 10px; }
+  .categories h4 { font-size: 0.9rem; color: var(--primary-purple); margin-bottom: 10px; }
   .categories ul { padding-left: 20px; }
-  .categories ul li { list-style: disc; font-size: 0.95rem; margin-bottom: 5px; color: #4B5563; }
+  .categories ul li { list-style: disc; font-size: 0.95rem; margin-bottom: 5px; color: var(--text-muted); }
 
   .btn-sm { padding: 8px 16px; font-size: 0.85rem; align-self: flex-start; }
 
-  .bg-light { background-color: #F9FAFB; }
+  .bg-light { 
+    background-color: var(--background); 
+    border-top: 1px solid var(--border-light);
+  }
 
   .visa-detail-grid {
     margin-top: 50px;
@@ -128,12 +139,12 @@ const countries = [
     background: var(--white);
     padding: 30px;
     border-radius: 12px;
-    border-left: 4px solid var(--accent-gold);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-left: 4px solid var(--primary-purple);
+    box-shadow: var(--card-shadow);
   }
 
   .visa-detail-item h3 { margin-bottom: 15px; font-size: 1.3rem; }
-  .visa-detail-item p { color: #4B5563; font-size: 0.95rem; line-height: 1.7; }
+  .visa-detail-item p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; }
 
   @media (max-width: 768px) {
     .visa-detail-grid { grid-template-columns: 1fr; }

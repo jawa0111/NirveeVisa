@@ -39,13 +39,13 @@
 
 <style>
   .contact-form {
-    background: rgba(20, 20, 20, 0.6);
+    background: var(--white);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
     padding: 48px;
     border-radius: 12px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--card-shadow);
   }
 
   .form-row {
@@ -68,12 +68,12 @@
   input, select, textarea {
     width: 100%;
     padding: 16px 20px;
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--background);
+    border: 1px solid #e5e7eb;
     border-radius: 8px;
     font-family: inherit;
     font-size: 1rem;
-    color: var(--white);
+    color: var(--text-main);
     transition: var(--transition);
   }
 
@@ -113,22 +113,22 @@
     top: -10px;
     left: 15px;
     font-size: 0.8rem;
-    color: var(--gold);
-    background: var(--obsidian-light);
+    color: var(--primary-purple);
+    background: var(--white);
     padding: 0 5px;
     border-radius: 3px;
   }
 
   input:focus, select:focus, textarea:focus {
     outline: none;
-    border-color: rgba(212, 175, 55, 0.5);
-    background: rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.05);
+    border-color: var(--primary-purple);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.05);
   }
 
   select {
     appearance: none;
-    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23D4AF37%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%237C3AED%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
     background-repeat: no-repeat;
     background-position: right 20px top 50%;
     background-size: 12px auto;

@@ -124,29 +124,32 @@ const services = [
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+    width: 80%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, rgba(219, 39, 119, 0.05) 50%, rgba(255, 255, 255, 0) 100%);
     z-index: 0;
     pointer-events: none;
   }
 
   .glass-cta {
-    background: rgba(20, 20, 20, 0.6);
+    background: var(--white);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    border: 1px solid var(--card-border);
     border-radius: 12px;
     padding: 80px 40px;
     text-align: center;
     position: relative;
     z-index: 1;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--card-shadow);
   }
 
   .cta-content h2 {
     font-size: 3rem;
     margin-bottom: 24px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--text-main);
   }
 
   .cta-content p {
@@ -157,9 +160,9 @@ const services = [
   }
 
   .stats {
-    background-color: var(--obsidian-light);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: var(--background);
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
   }
 
   .stat-grid {
@@ -177,8 +180,11 @@ const services = [
     display: block;
     font-family: var(--font-heading);
     font-size: 4rem;
-    font-weight: 700;
-    color: var(--gold);
+    font-weight: 800;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: 8px;
     line-height: 1;
   }

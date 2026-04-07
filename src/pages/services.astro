@@ -93,8 +93,8 @@ const services = [
 
 <style>
   .page-header {
-    background: linear-gradient(to bottom, var(--obsidian-light), var(--obsidian));
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--background);
+    border-bottom: 1px solid var(--border-light);
     padding-top: 150px;
     padding-bottom: 80px;
   }
@@ -134,7 +134,9 @@ const services = [
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(212, 175, 55, 0.1);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
   }
 
   .service-card::before {
@@ -144,7 +146,7 @@ const services = [
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.08));
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(219, 39, 119, 0.05));
     opacity: 0;
     transition: opacity 0.4s ease;
     z-index: -1;
@@ -152,8 +154,8 @@ const services = [
 
   .service-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
-    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.15);
+    border-color: var(--primary-pink);
   }
 
   .service-card:hover::before {
@@ -161,7 +163,7 @@ const services = [
   }
 
   .icon-wrapper {
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(212, 175, 55, 0.15));
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(219, 39, 119, 0.05));
     width: 64px;
     height: 64px;
     display: flex;
@@ -170,8 +172,8 @@ const services = [
     border-radius: 12px;
     margin-bottom: 24px;
     font-size: 1.8rem;
-    color: var(--gold);
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    color: var(--primary-purple);
+    border: 1px solid rgba(124, 58, 237, 0.1);
     transition: all 0.3s ease;
     position: relative;
   }
@@ -183,7 +185,7 @@ const services = [
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(45deg, var(--gold), rgba(212, 175, 55, 0.3), var(--gold));
+    background: var(--primary-gradient);
     border-radius: 12px;
     opacity: 0;
     z-index: -1;
@@ -192,7 +194,7 @@ const services = [
 
   .service-card:hover .icon-wrapper {
     transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.25);
   }
 
   .service-card:hover .icon-wrapper::after {
@@ -214,17 +216,17 @@ const services = [
   }
 
   .service-card:hover h3 {
-    color: var(--gold);
+    color: var(--primary-purple);
     transform: translateX(4px);
   }
 
   .service-card:hover p {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-main);
   }
 
   .bg-darker {
-    background-color: var(--obsidian-lighter);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: var(--background);
+    border-top: 1px solid var(--border-light);
   }
 
   .process-grid {
@@ -238,14 +240,15 @@ const services = [
     text-align: left;
     position: relative;
     padding: 30px;
-    background: rgba(0, 0, 0, 0.2);
+    background: var(--white);
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
     transition: var(--transition);
+    box-shadow: var(--card-shadow);
   }
 
   .process-step:hover {
-    border-color: rgba(212, 175, 55, 0.3);
+    border-color: var(--primary-purple);
     transform: translateY(-5px);
   }
 
@@ -253,8 +256,8 @@ const services = [
     font-family: var(--font-heading);
     font-size: 3rem;
     font-weight: 800;
-    color: var(--gold);
-    opacity: 0.3;
+    color: var(--primary-purple);
+    opacity: 0.1;
     line-height: 1;
     margin-bottom: 20px;
   }
