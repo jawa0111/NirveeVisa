@@ -33,9 +33,13 @@ const { title, subtitle, ctaText, ctaLink } = Astro.props;
 
   <!-- CONTENT LAYER -->
   <div class="container" style="position: relative; z-index: 10; display: flex; justify-content: center; text-align: center; width: 100%;">
-    <div style="max-width: 900px;">
+    <div style="max-width: 1100px;">
       
-      <h1 style="font-size: clamp(2rem, 5vw, 4rem); font-weight: 800; color: #1E1B4B; line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 25px; text-shadow: 0 10px 30px rgba(0,0,0,0.05); font-family: 'Outfit', sans-serif;" set:html={title} />
+      <h1 
+        id="hero-rotating-title"
+        style="font-size: clamp(1.8rem, 4.5vw, 3.5rem); font-weight: 800; color: #1E1B4B; line-height: 1.1; letter-spacing: -1.2px; margin-bottom: 25px; text-shadow: 0 10px 30px rgba(0,0,0,0.05); font-family: 'Outfit', sans-serif; transition: opacity 0.8s ease, transform 0.8s ease;" 
+        set:html={title} 
+      />
       
       <p style="font-size: clamp(1.1rem, 3vw, 1.6rem); color: #4B5563; max-width: 750px; margin: 0 auto 50px; font-weight: 400; line-height: 1.5; font-family: 'Inter', sans-serif;">
         {subtitle}
@@ -67,3 +71,35 @@ const { title, subtitle, ctaText, ctaLink } = Astro.props;
     }
   }
 </style>
+
+<script is:inline>
+  const messages = [
+    "Nirvee Visa<br/>VISA & IMMIGRATION EXPERTS PVT LTD",
+    "Your global education starts here—seamless and stress-free.",
+    "Expert mentorship for every step of your path.",
+    "Unlock Unrivaled Opportunities in Every Corner of the Globe."
+  ];
+
+  let currentIndex = 0;
+  const titleElement = document.getElementById('hero-rotating-title');
+
+  function rotateText() {
+    if (!titleElement) return;
+
+    // Fade out
+    titleElement.style.opacity = '0';
+    titleElement.style.transform = 'translateY(10px)';
+
+    setTimeout(() => {
+      currentIndex = (currentIndex + 1) % messages.length;
+      titleElement.innerHTML = messages[currentIndex];
+      
+      // Fade in
+      titleElement.style.opacity = '1';
+      titleElement.style.transform = 'translateY(0)';
+    }, 800); // Match transition duration
+  }
+
+  // Initial delay of 5 seconds before first rotation
+  setInterval(rotateText, 5000);
+</script>

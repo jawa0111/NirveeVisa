@@ -1,12 +1,5 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-
-const team = [
-  { name: 'Dr. Sarah Johnson', role: 'Managing Partner', image: '👩‍💼' },
-  { name: 'Michael Chen, Esq.', role: 'Head of Corporate Mobility', image: '👨‍💼' },
-  { name: 'Emma Williams', role: 'Director, Investor Visas', image: '👩‍💼' },
-  { name: 'David Smith', role: 'Senior Global Strategist', image: '👨‍💼' }
-];
 ---
 
 <MainLayout title="About Us" description="Discover the elite firm behind thousands of successful global transitions.">
@@ -14,7 +7,7 @@ const team = [
     <div class="container text-center">
       <span class="gold-text uppercase-label">The Firm</span>
       <h1>Excellence in Global Mobility</h1>
-      <p class="subtitle">A distinguished consultancy empowering elite professionals, investors, and tier-one corporations to transcend borders effortlessly.</p>
+      <p class="subtitle">Empowering your global journey through empathy, diverse language support, and a shared immigrant background.</p>
     </div>
   </section>
 
@@ -22,25 +15,10 @@ const team = [
     <div class="container grid-2">
       <div class="about-text">
         <h2 class="gold-text">Our Philosophy</h2>
-        <p class="lead">At Nirvee Visa Premium Consulting, we view global mobility not as a bureaucratic hurdle, but as a strategic asset.</p>
-        <p>Our mandate is to dismantle the complexities of international relocation. By fusing profound legislative acumen with a white-glove advisory approach, we curate unparalleled immigration strategies that guarantee precision, absolute discretion, and flawless execution.</p>
+        <p class="lead">At Nirvee Visa & Experts Pvt Ltd, we understand that choosing to immigrate is one of the most significant decisions you will ever make. That’s why we are dedicated to making your future our top priority.</p>
+        <p>With our immigrant background, we truly relate to the challenges you face at every stage of your journey. To support you better, we offer our services in 12 diverse languages, including English, Tamil, Sinhalese, Urdu, Hindi, Punjabi, Tagalog, Ukrainian, Russian, Italian, Albanian, and Portuguese.</p>
+        <p>We look forward to hearing your story and helping you achieve your immigration goals!</p>
         
-        <div class="values mt-40">
-          <div class="value-item">
-            <div class="value-icon">✧</div>
-            <div>
-              <h4 class="gold-text">Unyielding Discretion</h4>
-              <p>We manage high-profile cases with absolute confidentiality and supreme professionalism.</p>
-            </div>
-          </div>
-          <div class="value-item">
-            <div class="value-icon">✧</div>
-            <div>
-              <h4 class="gold-text">Bespoke Strategy</h4>
-              <p>Abandoning the "one-size-fits-all" model for meticulous, tailored legal frameworks.</p>
-            </div>
-          </div>
-        </div>
       </div>
       <div class="about-image glass-card p-0">
         <div class="image-placeholder">
@@ -50,25 +28,6 @@ const team = [
     </div>
   </section>
 
-  <section class="team section-padding bg-darker">
-    <div class="container text-center">
-      <span class="gold-text uppercase-label">Leadership</span>
-      <h2>Our Senior Strategists</h2>
-      <p class="subtitle mb-60">Pioneers in global immigration law and corporate mobility.</p>
-      
-      <div class="team-grid">
-        {team.map(member => (
-          <div class="team-card">
-            <div class="team-avatar">{member.image}</div>
-            <div class="team-info">
-              <h3>{member.name}</h3>
-              <p class="gold-text">{member.role}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
 </MainLayout>
 
 <style>

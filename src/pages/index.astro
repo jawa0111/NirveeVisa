@@ -5,28 +5,22 @@ import ServiceCard from '../components/ServiceCard.astro';
 
 const services = [
   {
-    icon: '🏢',
-    title: 'Work Visas',
-    description: 'Expert assistance for skilled worker Visas and corporate employment sponsors globally.',
-    link: '/services#work'
+    icon: '🏆',
+    title: 'Skilled Immigration',
+    description: 'Streamlined pathways for professionals and trade experts to secure residency based on expertise.',
+    link: '/services'
   },
   {
-    icon: '🎓',
-    title: 'Study Visas',
-    description: 'Complete guidance for international students to top-tier universities worldwide.',
-    link: '/services#study'
+    icon: '🔍',
+    title: 'Job Seeker Visa',
+    description: 'Specialized programs allowing qualified individuals to enter and search for elite global employment.',
+    link: '/services'
   },
   {
-    icon: '🏠',
-    title: 'Family Visas',
-    description: 'Reuniting families with expedited spouse, child, and parental visa applications.',
-    link: '/services#family'
-  },
-  {
-    icon: '✈️',
-    title: 'Investor Visas',
-    description: 'Bespoke programs for high-net-worth individuals seeking citizenship by investment.',
-    link: '/programs#investor'
+    icon: '🛂',
+    title: 'Temporary Residence Visa',
+    description: 'Reliable solutions for work, study, and visitor permits for hassle-free temporary relocation.',
+    link: '/services'
   }
 ];
 ---
@@ -43,14 +37,112 @@ const services = [
   <section class="services section-padding">
     <div class="container">
       <div class="section-header text-center">
-        <span class="gold-text uppercase-label">Our Capabilities</span>
-        <h2>Bespoke Immigration Services</h2>
-        <p class="lead">We deliver comprehensive strategies tailored for individuals and corporations seeking seamless global mobility.</p>
+        <span class="gold-text uppercase-label">Our Features</span>
+        <h2>Expert Immigration Solutions</h2>
+        <p class="lead">We provide comprehensive immigration support tailored to your unique journey, ensuring a smooth and successful transition to your new home.</p>
       </div>
       <div class="grid service-grid">
         {services.map(service => (
           <ServiceCard {...service} />
         ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="destinations-v2 section-padding no-padding-top" style="background: white;">
+    <div class="container-fluid">
+      <!-- Section header with gradient line -->
+      <div class="dest-section-header">
+        <div class="dest-line"></div>
+        <h2 class="dest-title">Explore Global Opportunities</h2>
+        <div class="dest-line"></div>
+      </div>
+      
+      <div class="slider-container">
+        <!-- Canada -->
+        <div class="slider-card active" style="background-image: url('/canada_highres.jpg');">
+          <div class="card-glass-overlay"></div>
+          <div class="card-main-content">
+            <div class="flag-badge">
+              <img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/1x1/ca.svg" alt="" class="round-flag" />
+            </div>
+            <h3 class="destination-name">Canada</h3>
+            <ul class="visa-categories">
+              <li><span class="pink-dot"></span> PERMANENT RESIDENCE VISA</li>
+              <li><span class="pink-dot"></span> STUDY TO PR PATHWAY</li>
+            </ul>
+            <a href="/contact" class="btn btn-luxury">Contact Us</a>
+          </div>
+          <div class="vertical-label">Canada</div>
+        </div>
+
+        <!-- Germany -->
+        <div class="slider-card" style="background-image: url('/geramany.jpg');">
+          <div class="card-glass-overlay"></div>
+          <div class="card-main-content">
+            <div class="flag-badge">
+              <img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/1x1/de.svg" alt="" class="round-flag" />
+            </div>
+            <h3 class="destination-name">Germany</h3>
+            <ul class="visa-categories">
+              <li><span class="pink-dot"></span> JOB SEEKER VISA</li>
+              <li><span class="pink-dot"></span> GERMANY STUDY PERMIT</li>
+            </ul>
+            <a href="/contact" class="btn btn-luxury">Contact Us</a>
+          </div>
+          <div class="vertical-label">Germany</div>
+        </div>
+
+        <!-- UK -->
+        <div class="slider-card" style="background-image: url('/uk.jpg');">
+          <div class="card-glass-overlay"></div>
+          <div class="card-main-content">
+            <div class="flag-badge">
+              <img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/1x1/gb.svg" alt="" class="round-flag" />
+            </div>
+            <h3 class="destination-name">UK</h3>
+            <ul class="visa-categories">
+              <li><span class="pink-dot"></span> UK STUDY PERMIT</li>
+              <li><span class="pink-dot"></span> SKILLED WORKER VISA</li>
+            </ul>
+            <a href="/contact" class="btn btn-luxury">Contact Us</a>
+          </div>
+          <div class="vertical-label">UK</div>
+        </div>
+
+        <!-- Australia -->
+        <div class="slider-card" style="background-image: url('/australia.jpg');">
+          <div class="card-glass-overlay"></div>
+          <div class="card-main-content">
+            <div class="flag-badge">
+              <img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/1x1/au.svg" alt="" class="round-flag" />
+            </div>
+            <h3 class="destination-name">Australia</h3>
+            <ul class="visa-categories">
+              <li><span class="pink-dot"></span> SKILLED INDEPENDENT VISA</li>
+              <li><span class="pink-dot"></span> STUDENT VISA</li>
+            </ul>
+            <a href="/contact" class="btn btn-luxury">Contact Us</a>
+          </div>
+          <div class="vertical-label">Australia</div>
+        </div>
+
+        <!-- New Zealand -->
+        <div class="slider-card" style="background-image: url('/newzland.jpg');">
+          <div class="card-glass-overlay"></div>
+          <div class="card-main-content">
+            <div class="flag-badge">
+              <img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/1x1/nz.svg" alt="" class="round-flag" />
+            </div>
+            <h3 class="destination-name">New Zealand</h3>
+            <ul class="visa-categories">
+              <li><span class="pink-dot"></span> SKILLED MIGRANT CATEGORY</li>
+              <li><span class="pink-dot"></span> STUDENT VISA</li>
+            </ul>
+            <a href="/contact" class="btn btn-luxury">Contact Us</a>
+          </div>
+          <div class="vertical-label">New Zealand</div>
+        </div>
       </div>
     </div>
   </section>
@@ -71,7 +163,7 @@ const services = [
   <section class="stats section-padding">
     <div class="container stat-grid">
       <div class="stat-item">
-        <span class="stat-number">15+</span>
+        <span class="stat-number">7+</span>
         <span class="stat-label">Years of Excellence</span>
       </div>
       <div class="stat-item">
@@ -207,4 +299,250 @@ const services = [
     .glass-cta { padding: 40px 20px; }
     .stat-number { font-size: 3rem; }
   }
+  /* Destinations V2 Slider Styling */
+  .destinations-v2 {
+    background: white;
+    padding-bottom: 150px;
+  }
+
+  .container-fluid {
+    width: 100%;
+    padding: 0 40px;
+  }
+
+  /* Section header with gradient line */
+  .dest-section-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 40px 0 32px;
+  }
+
+  .dest-line {
+    flex: 1;
+    height: 4px;
+    background: linear-gradient(135deg, #7C3AED 0%, #DB2777 100%);
+    border-radius: 2px;
+    min-width: 40px;
+  }
+
+  .dest-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 700;
+    color: #1E1B4B;
+    white-space: nowrap;
+    background: linear-gradient(135deg, #7C3AED 0%, #DB2777 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+  }
+
+  .slider-container {
+    display: flex;
+    width: 100%;
+    height: 450px;
+    gap: 15px;
+  }
+
+  .slider-card {
+    position: relative;
+    flex: 0.5;
+    background-size: cover;
+    background-position: center;
+    border-radius: 40px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.4, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slider-card.active {
+    flex: 6;
+    cursor: default;
+  }
+
+  .card-glass-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    transition: background 0.5s ease;
+  }
+
+  .slider-card:not(.active) .card-glass-overlay {
+    background: transparent;
+  }
+
+  .card-main-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.4, 1);
+    width: 100%;
+    padding: 40px;
+    pointer-events: none;
+  }
+
+  .slider-card.active .card-main-content {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    transition-delay: 0.3s;
+  }
+
+  .flag-badge {
+    background: rgba(255, 255, 255, 0.8);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    overflow: hidden;
+  }
+
+  .round-flag {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .destination-name {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -2px;
+    text-shadow: 0 5px 15px rgba(255,255,255,0.4);
+    color: #1E1B4B; /* Brand Navy */
+  }
+
+  .visa-categories {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 500px;
+  }
+
+  .visa-categories li {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  .pink-dot {
+    width: 16px;
+    height: 16px;
+    background: #DB2777; /* primary-pink */
+    border-radius: 50%;
+    box-shadow: 0 0 15px #DB2777;
+    flex-shrink: 0;
+  }
+
+  .btn-luxury {
+    background: #fff;
+    color: #000;
+    border-radius: 100px;
+    padding: 18px 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.4, 1);
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: inline-block;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+
+  .btn-luxury:hover {
+    background: #000;
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+  }
+
+  /* Vertical text for side panels */
+  .vertical-label {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(-90deg);
+    color: white;
+    font-weight: 700;
+    font-size: 3.5rem;
+    white-space: nowrap;
+    opacity: 0.9;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    font-family: serif;
+    letter-spacing: -2px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
+
+  .active .vertical-label {
+    opacity: 0;
+  }
+
+  @media (max-width: 1200px) {
+    .destination-name { font-size: 3rem; }
+    .slider-container { height: 400px; }
+  }
+
+  @media (max-width: 768px) {
+    .slider-container {
+      flex-direction: column;
+      height: auto;
+      min-height: 1200px;
+    }
+    .slider-card {
+      min-height: 150px;
+      flex: none;
+    }
+    .slider-card.active {
+      min-height: 500px;
+      flex: none;
+    }
+    .vertical-label {
+      bottom: 20px;
+      transform: translateX(-50%);
+      rotate: 0deg;
+      font-size: 1.4rem;
+    }
+  }
 </style>
+
+<script is:inline>
+  document.addEventListener('astro:page-load', () => {
+    const cards = document.querySelectorAll('.slider-card');
+    
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        cards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+      });
+    });
+  });
+</script>
