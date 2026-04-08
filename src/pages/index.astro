@@ -49,6 +49,75 @@ const services = [
     </div>
   </section>
 
+  <section class="why-choose-us section-padding">
+    <div class="container">
+      <div class="why-choose-layout">
+        <div class="why-header-left">
+          <div class="section-header">
+            <span class="gold-text uppercase-label why-choose-label">Why Choose Us?</span>
+            <h2 class="excellence-heading">Excellence in Immigration Services</h2>
+            <p class="lead">Experience the difference with our innovative approach to global mobility solutions</p>
+          </div>
+        </div>
+
+        <div class="why-cards-right">
+          <div class="why-choose-grid">
+        <div class="why-choose-card">
+          <div class="why-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&crop=center" alt="Expert Guidance" class="why-bg-image" />
+            <div class="why-image-overlay"></div>
+            <div class="why-content">
+              <div class="why-icon">🎯</div>
+              <h3>Expert Guidance</h3>
+              <p>7+ years of specialized immigration expertise with proven success strategies</p>
+              <div class="why-tag">PROFESSIONAL EXCELLENCE</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-choose-card">
+          <div class="why-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center" alt="Success Driven" class="why-bg-image" />
+            <div class="why-image-overlay"></div>
+            <div class="why-content">
+              <div class="why-icon">📈</div>
+              <h3>Success Driven</h3>
+              <p>99% approval rate with 10,000+ successful immigration cases worldwide</p>
+              <div class="why-tag">PROVEN RESULTS</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-choose-card">
+          <div class="why-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop&crop=center" alt="Global Reach" class="why-bg-image" />
+            <div class="why-image-overlay"></div>
+            <div class="why-content">
+              <div class="why-icon">🌍</div>
+              <h3>Global Reach</h3>
+              <p>64 jurisdictions worldwide with comprehensive immigration solutions</p>
+              <div class="why-tag">WORLDWIDE PRESENCE</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-choose-card">
+          <div class="why-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&crop=center" alt="Personalized Service" class="why-bg-image" />
+            <div class="why-image-overlay"></div>
+            <div class="why-content">
+              <div class="why-icon">💎</div>
+              <h3>Personalized Service</h3>
+              <p>Tailored strategies designed specifically for your unique immigration journey</p>
+              <div class="why-tag">CUSTOM SOLUTIONS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
   <section class="destinations-v2 section-padding no-padding-top" style="background: white;">
     <div class="container-fluid">
       <!-- Section header with gradient line -->
@@ -202,6 +271,334 @@ const services = [
   .service-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 32px;
+  }
+
+  .why-choose-us {
+    background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .why-choose-us::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 20s ease-in-out infinite;
+  }
+
+  .why-choose-us::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(219, 39, 119, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 15s ease-in-out infinite reverse;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-20px) rotate(120deg); }
+    66% { transform: translateY(10px) rotate(240deg); }
+  }
+
+  .why-choose-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    margin-top: 60px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .why-header-left {
+    flex: 0 0 40%;
+    text-align: left;
+    padding: 20px 0;
+  }
+
+  .why-header-left .section-header {
+    text-align: left;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .why-header-left .section-header .why-choose-label {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #FFD700;
+    margin-bottom: 15px;
+    display: block;
+  }
+
+  .why-header-left .section-header .excellence-heading {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+
+  .why-header-left .section-header .lead {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+    line-height: 1.4;
+  }
+
+  .why-header-left .section-header .lead {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+    line-height: 1.4;
+  }
+
+  .why-cards-right {
+    flex: 0 0 55%;
+  }
+
+  .why-choose-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .why-choose-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.4, 1);
+    background: #fff;
+    height: 280px;
+  }
+
+  .why-choose-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #7C3AED 0%, #DB2777 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.4, 1);
+  }
+
+  .why-choose-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .why-choose-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(124, 58, 237, 0.15);
+  }
+
+  .why-image-wrapper {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .why-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.4, 1);
+  }
+
+  .why-choose-card:hover .why-bg-image {
+    transform: scale(1.1);
+  }
+
+  .why-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%);
+    transition: opacity 0.4s ease;
+  }
+
+  .why-choose-card:hover .why-image-overlay {
+    opacity: 1;
+  }
+
+  .why-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    color: white;
+    z-index: 2;
+  }
+
+  .why-icon {
+    display: none;
+  }
+
+  .why-content h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
+
+  .why-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.4, 1);
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .why-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.4, 1);
+    animation: none;
+  }
+
+  .why-choose-card:hover .why-content p {
+    opacity: 0.95;
+    transform: translateY(0);
+  }
+
+  .why-choose-card:hover .why-content .why-tag {
+    opacity: 1;
+    transform: translateY(0);
+    animation: pulse 3s infinite;
+  }
+
+  .why-choose-card:hover .why-icon {
+    opacity: 0.8;
+    transform: scale(0.9);
+  }
+
+  .why-choose-card:hover .why-content h3 {
+    transform: translateY(-5px);
+  }
+
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 0.9; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+  }
+
+  /* Fallback for missing images */
+  .why-bg-image:not([src]) {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .why-choose-card:nth-child(1) .why-bg-image:not([src]) {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .why-choose-card:nth-child(2) .why-bg-image:not([src]) {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  }
+
+  .why-choose-card:nth-child(3) .why-bg-image:not([src]) {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  }
+
+  .why-choose-card:nth-child(4) .why-bg-image:not([src]) {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  }
+
+  .why-choose-card:nth-child(5) .why-bg-image:not([src]) {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  }
+
+  .why-choose-card:nth-child(6) .why-bg-image:not([src]) {
+    background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+  }
+
+  .why-choose-card:nth-child(7) .why-bg-image:not([src]) {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  }
+
+  .why-choose-card:nth-child(8) .why-bg-image:not([src]) {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+  }
+
+  @media (max-width: 768px) {
+    .why-choose-grid {
+      grid-template-columns: 1fr;
+      gap: 25px;
+      margin-top: 40px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .why-choose-layout {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .why-header-left {
+      flex: 1;
+      text-align: center;
+    }
+
+    .why-cards-right {
+      flex: 1;
+    }
+
+    .why-choose-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .why-choose-layout {
+      gap: 30px;
+    }
+
+    .why-header-left {
+      text-align: center;
+    }
+
+    .why-choose-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .why-choose-card {
+      height: 280px;
+    }
+
+    .why-content {
+      padding: 25px;
+    }
+
+    .why-content h3 {
+      font-size: 1.5rem;
+    }
+
+    .why-content p {
+      font-size: 0.95rem;
+    }
   }
 
   .cta-section {
