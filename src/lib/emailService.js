@@ -2,7 +2,7 @@ import { BrevoClient } from "@getbrevo/brevo";
 
 // Initialize Brevo API client
 const brevoClient = new BrevoClient({
-  apiKey: import.meta.env.BREVO_API_KEY,
+  apiKey: process.env.BREVO_API_KEY,
 });
 
 /**
@@ -30,11 +30,11 @@ export async function sendEmail(emailData) {
     const sendEmailRequest = {
       to: [{ email: to, name: toName }],
       sender: {
-        email: import.meta.env.SENDER_EMAIL,
+        email: process.env.SENDER_EMAIL,
         name: "Nirvee Visa Website",
       },
       replyTo: {
-        email: import.meta.env.SENDER_EMAIL,
+        email: process.env.SENDER_EMAIL,
         name: "Nirvee Visa Support",
       },
       subject: subject,
@@ -47,8 +47,8 @@ export async function sendEmail(emailData) {
       "Sending email with data:",
       JSON.stringify(sendEmailRequest, null, 2),
     );
-    console.log("API Key present:", !!import.meta.env.BREVO_API_KEY);
-    console.log("Sender email:", import.meta.env.SENDER_EMAIL);
+    console.log("API Key present:", !!process.env.BREVO_API_KEY);
+    console.log("Sender email:", process.env.SENDER_EMAIL);
 
     // Send the email using the new SDK
     const result =

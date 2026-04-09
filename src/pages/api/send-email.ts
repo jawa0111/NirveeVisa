@@ -127,13 +127,12 @@ export async function POST({ request }) {
     `;
 
     // Send email to your admin email (you can set this in environment variables)
-    const recipientEmail =
-      import.meta.env.ADMIN_EMAIL || import.meta.env.SENDER_EMAIL;
+    const recipientEmail = process.env.ADMIN_EMAIL || process.env.SENDER_EMAIL;
 
     console.log("Environment variables:", {
-      ADMIN_EMAIL: import.meta.env.ADMIN_EMAIL,
-      SENDER_EMAIL: import.meta.env.SENDER_EMAIL,
-      BREVO_API_KEY: import.meta.env.BREVO_API_KEY ? "present" : "missing",
+      ADMIN_EMAIL: process.env.ADMIN_EMAIL,
+      SENDER_EMAIL: process.env.SENDER_EMAIL,
+      BREVO_API_KEY: process.env.BREVO_API_KEY ? "present" : "missing",
     });
 
     console.log("Email data being sent:", {
