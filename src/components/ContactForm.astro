@@ -286,9 +286,11 @@
   }
 </style>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
+<script is:inline>
+  (function() {
     const form = document.getElementById('contactForm');
+    if (!form) return; // Exit if form not found
+
     const submitBtn = document.getElementById('submitBtn');
     const btnText = submitBtn.querySelector('.btn-text');
     const btnLoading = submitBtn.querySelector('.btn-loading');
@@ -296,6 +298,8 @@
 
     // Custom Dropdown Functionality
     const serviceDropdown = document.getElementById('serviceDropdown');
+    if (!serviceDropdown) return;
+
     const selectTrigger = serviceDropdown.querySelector('.select-trigger');
     const selectValue = serviceDropdown.querySelector('.select-value');
     const selectOptions = serviceDropdown.querySelector('.select-options');
@@ -304,7 +308,7 @@
 
     // Toggle dropdown
     selectTrigger.addEventListener('click', function(e) {
-      e.preventDefault();
+      e.stopPropagation();
       serviceDropdown.classList.toggle('active');
     });
 
@@ -460,5 +464,5 @@
         btnLoading.style.display = 'none';
       }
     });
-  });
+  })();
 </script>
