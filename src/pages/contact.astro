@@ -55,6 +55,98 @@ import ContactForm from '../components/ContactForm.astro';
     </div>
   </section>
 
+  <section class="faq-section section-padding">
+    <div class="container">
+      <div class="text-center mb-50">
+        <span class="gold-text uppercase-label drop-shadow">Support</span>
+        <h2>Frequently Asked Questions</h2>
+        <p class="subtitle">Find answers to common questions about our immigration services</p>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Q1. What services does Nirvee Visa offer?</span>
+            <span class="faq-icon">›</span>
+          </button>
+          <div class="faq-answer">
+            <p>We specialize in PR Pathway programs, Study Permits, and Job Seeker Visas for multiple countries including Canada, Australia, Germany, and the UK. Our services cover the entire process from initial consultation to visa approval.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Q2. How long does the visa application process take?</span>
+            <span class="faq-icon">›</span>
+          </button>
+          <div class="faq-answer">
+            <p>Processing times vary by country and visa type. Study permits typically take 4-8 weeks, PR applications 6-12 months, and job seeker visas 2-6 weeks. We provide accurate timelines during your consultation based on your specific case.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Q3. What documents are required for visa applications?</span>
+            <span class="faq-icon">›</span>
+          </button>
+          <div class="faq-answer">
+            <p>Common requirements include a valid passport, proof of funds, educational credentials, work experience letters, language test results (IELTS/TOEFL), and medical/police clearance certificates. We provide a complete checklist tailored to your destination.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Q4. Do you help with job placement for Job Seeker Visas?</span>
+            <span class="faq-icon">›</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, we assist with resume optimization, job market research, and connecting you with employers in your target country. While we don't guarantee employment, our partnerships with recruitment agencies significantly improve your job search success.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Q5. Can I work while studying on a Student Visa?</span>
+            <span class="faq-icon">›</span>
+          </button>
+          <div class="faq-answer">
+            <p>Most countries allow international students to work part-time (20 hours/week during term, full-time during breaks). We guide you on work permit regulations for your specific study destination to ensure compliance.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Q6. What is your consultation fee?</span>
+            <span class="faq-icon">›</span>
+          </button>
+          <div class="faq-answer">
+            <p>Initial consultations are free. Our service fees vary based on visa complexity and destination country. We provide transparent pricing with no hidden charges. Contact us for a detailed quote tailored to your immigration goals.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Q7. Do you assist with visa rejections and reapplications?</span>
+            <span class="faq-icon">›</span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. We analyze rejection reasons, strengthen your application with additional documentation, and guide you through the appeal or reapplication process. Our experience with complex cases increases your chances of approval.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Q8. Which countries do you specialize in?</span>
+            <span class="faq-icon">›</span>
+          </button>
+          <div class="faq-answer">
+            <p>We have expertise in Canada (Express Entry, PNP), Australia (Skilled Migration, Student Visas), Germany (Job Seeker Visa, Blue Card), UK (Work Visas, Student Routes), and New Zealand. Our team stays updated on changing immigration policies.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="map-section">
     <div class="map-container">
       <iframe
@@ -71,6 +163,26 @@ import ContactForm from '../components/ContactForm.astro';
   </section>
 
 </MainLayout>
+
+<script is:inline>
+  // FAQ Accordion functionality
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', function() {
+      const faqItem = this.parentElement;
+      const isActive = faqItem.classList.contains('active');
+      
+      // Close all items
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      
+      // Open clicked item if it wasn't already active
+      if (!isActive) {
+        faqItem.classList.add('active');
+      }
+    });
+  });
+</script>
 
 <style>
   .page-header {
@@ -173,5 +285,105 @@ import ContactForm from '../components/ContactForm.astro';
     height: 100%;
     border: none;
     display: block;
+  }
+
+  .faq-section {
+    background: var(--background);
+    border-top: 1px solid var(--border-light);
+  }
+
+  .mb-50 {
+    margin-bottom: 50px;
+  }
+
+  .faq-accordion {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border: 1px solid var(--border-light);
+    border-bottom: none;
+    background: var(--white);
+    transition: var(--transition);
+  }
+
+  .faq-item:last-child {
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .faq-item:hover {
+    background: var(--background-alt);
+  }
+
+  .faq-question {
+    width: 100%;
+    padding: 24px 30px;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-heading);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transition: var(--transition);
+    font-family: var(--font-body);
+  }
+
+  .faq-question:hover {
+    color: var(--primary-purple);
+  }
+
+  .faq-icon {
+    font-size: 1.5rem;
+    color: var(--primary-purple);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .faq-item.active .faq-icon {
+    transform: rotate(90deg);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 30px;
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 300px;
+    padding: 0 30px 24px 30px;
+  }
+
+  .faq-answer p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .faq-question {
+      padding: 18px 20px;
+      font-size: 1rem;
+    }
+
+    .faq-answer {
+      padding: 0 20px;
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 0 20px 18px 20px;
+    }
+
+    .faq-icon {
+      font-size: 1.3rem;
+    }
   }
 </style>
