@@ -2,42 +2,241 @@
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<MainLayout title="Business Immigration Pathways" description="Business immigration programs for entrepreneurs and investors">
+<MainLayout 
+  title="Business Immigration Pathways" 
+  description="Business immigration programs for entrepreneurs and investors"
+>
+  <!-- Page Header -->
   <section class="page-header section-padding">
     <div class="container text-center">
       <span class="gold-text uppercase-label">Visa Services</span>
       <h1>Business Immigration Pathways</h1>
-      <p class="subtitle">Programs for entrepreneurs, investors, and self-employed individuals to establish or expand their business in Canada.</p>
+      <p class="subtitle">
+        Programs for entrepreneurs, investors, and self-employed individuals to establish or expand their business in Canada.
+      </p>
     </div>
   </section>
 
+  <!-- Content Section -->
   <section class="visitor-visa-content section-padding">
     <div class="container">
       <div class="content-grid">
-        <!-- Provincial Nominee Entrepreneur Programs -->
+
+        <!-- Provincial Nominee -->
         <div class="glass-card content-section">
           <div class="section-icon">location_city</div>
           <h2>Provincial Nominee Entrepreneur Programs</h2>
-          <p>Provinces offer streams for entrepreneurs willing to invest, establish, or operate businesses locally. Successful nominees receive a Provincial Nominee Certificate, which can lead to permanent residence. Programs vary by province.</p>
-          <p><em>Contact us for more information regarding the other countries.</em></p>
+
+          <p>
+            Provinces offer streams for entrepreneurs willing to invest, establish, or operate businesses locally.
+          </p>
+
+          <div class="highlight-box">
+            <h3>Key Benefits:</h3>
+            <ul>
+              <li>Pathway to permanent residence</li>
+              <li>Province-specific business opportunities</li>
+              <li>Flexible investment options</li>
+            </ul>
+          </div>
+
+          <p><em>Contact us for more information regarding other countries.</em></p>
         </div>
 
-        <!-- Federal Start-Up Visa -->
+        <!-- Start-Up Visa -->
         <div class="glass-card content-section">
           <div class="section-icon">lightbulb</div>
           <h2>Federal Start-Up Visa</h2>
-          <p>Designed for innovative entrepreneurs who can secure support from designated venture capital funds or angel investors, with investments starting at $75,000–$200,000 CAD. Applicants must demonstrate language proficiency, business acumen, and sufficient settlement funds.</p>
+
+          <p>
+            Designed for innovative entrepreneurs supported by investors or venture capital funds.
+          </p>
+
+          <div class="highlight-box">
+            <h3>Requirements:</h3>
+            <ul>
+              <li>Investment from approved organizations</li>
+              <li>Language proficiency</li>
+              <li>Business innovation and scalability</li>
+            </ul>
+          </div>
         </div>
 
-        <!-- Self-Employed Persons Program -->
+        <!-- Self Employed -->
         <div class="glass-card content-section">
           <div class="section-icon">brush</div>
           <h2>Self-Employed Persons Program</h2>
-          <p>For individuals capable of contributing to Canada's cultural or athletic sectors, with a points-based system evaluating education, experience, language skills, and adaptability. Applicants must meet a minimum score of 35 points out of 100.</p>
+
+          <p>
+            Ideal for individuals contributing to cultural or athletic sectors in Canada.
+          </p>
+
+          <div class="highlight-box">
+            <h3>Evaluation Criteria:</h3>
+            <ul>
+              <li>Education and experience</li>
+              <li>Language skills</li>
+              <li>Minimum 35/100 points</li>
+            </ul>
+          </div>
         </div>
 
-        <!-- Intra-Company Transfers -->
+        <!-- Intra Company -->
         <div class="glass-card content-section">
           <div class="section-icon">business_center</div>
           <h2>Intra-Company Transfers</h2>
-          <p>Allows multinational corporations to transfer senior managers, executives, or specialized employees to Canada. The business must be operational for at least a year, with proven financial stability and a viable plan for Canadian expansion. Work permits are typically valid for 1–3 years
+
+          <p>
+            Allows companies to transfer employees to Canadian branches.
+          </p>
+
+          <div class="highlight-box">
+            <h3>Eligibility:</h3>
+            <ul>
+              <li>Company operational for 1+ year</li>
+              <li>Senior or specialized roles</li>
+              <li>Valid business expansion plan</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section section-padding bg-darker">
+    <div class="container text-center">
+      <h2>Need Help?</h2>
+      <p class="subtitle">Our immigration experts are ready to guide you.</p>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn btn-primary">Contact Us Today</a>
+      </div>
+    </div>
+  </section>
+
+</MainLayout>
+
+<style>
+  /* Header */
+  .page-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('/business-immigration.jpg') center/cover no-repeat;
+    border-bottom: 1px solid var(--border-light);
+    padding-top: 150px;
+    padding-bottom: 80px;
+  }
+
+  .page-header h1,
+  .uppercase-label,
+  .subtitle {
+    color: white;
+  }
+
+  /* Layout */
+  .content-grid {
+    display: grid;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Cards */
+  .content-section {
+    padding: 40px;
+    border-radius: 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .content-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.03), rgba(219, 39, 119, 0.03));
+    z-index: -1;
+  }
+
+  /* Icons */
+  .section-icon {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+    color: var(--primary-purple);
+    font-family: 'Material Icons';
+  }
+
+  /* Text */
+  .content-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+  }
+
+  .content-section p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  /* Highlight box */
+  .highlight-box {
+    background: rgba(124, 58, 237, 0.05);
+    border: 1px solid rgba(124, 58, 237, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 24px;
+  }
+
+  .highlight-box h3 {
+    color: var(--primary-purple);
+    margin-bottom: 16px;
+  }
+
+  .highlight-box li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    list-style: none;
+  }
+
+  .highlight-box li::before {
+    content: 'check_circle';
+    position: absolute;
+    left: 0;
+    color: var(--primary-purple);
+    font-family: 'Material Icons';
+  }
+
+  /* CTA */
+  .bg-darker {
+    background-color: var(--background);
+    border-top: 1px solid var(--border-light);
+  }
+
+  .cta-buttons {
+    margin-top: 30px;
+  }
+
+  .btn-primary {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .page-header {
+      padding-top: 100px;
+      padding-bottom: 60px;
+    }
+
+    .content-section {
+      padding: 24px;
+    }
+  }
+</style>

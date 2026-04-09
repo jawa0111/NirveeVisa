@@ -76,12 +76,14 @@ import MainLayout from '../layouts/MainLayout.astro';
 
 <style>
   .page-header {
-    background: var(--background);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/permanent.png') center/cover no-repeat;
     border-bottom: 1px solid var(--border-light);
     padding-top: 150px;
     padding-bottom: 80px;
   }
-
+  .page-header h1 {
+    color: white;
+  }
   .uppercase-label {
     display: inline-block;
     font-family: var(--font-heading);
@@ -90,12 +92,13 @@ import MainLayout from '../layouts/MainLayout.astro';
     text-transform: uppercase;
     margin-bottom: 16px;
     font-size: 0.9rem;
+    color:white;
   }
 
   .subtitle {
     margin-top: 20px;
     font-size: 1.25rem;
-    color: var(--text-muted);
+    color: white;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;

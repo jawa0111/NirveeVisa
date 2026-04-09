@@ -1,57 +1,56 @@
 ---
-import MainLayout from '../../layouts/MainLayout.astro';
+import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<MainLayout title="Ireland Student Visa" description="Ireland student visa application requirements and process">
+<MainLayout title="Study Permit Services" description="Study permit requirements for international students">
   <section class="page-header section-padding">
     <div class="container text-center">
-      <span class="gold-text uppercase-label">Study Permit</span>
-      <h1>Ireland Student Visa</h1>
-      <p class="subtitle">Experience world-class education in the Emerald Isle with an Ireland Study Visa.</p>
+      <span class="gold-text uppercase-label">Visa Services</span>
+      <h1>Study Permit</h1>
+      <p class="subtitle">To study in Canada, you must first be accepted by a designated learning institution (DLI).</p>
     </div>
   </section>
 
   <section class="visitor-visa-content section-padding">
     <div class="container">
       <div class="content-grid">
+        <!-- Who Can Apply -->
         <div class="glass-card content-section">
           <div class="section-icon">school</div>
-          <h2>Eligibility Requirements</h2>
+          <h2>Who Can Apply?</h2>
+          <p>Applicants must have an acceptance letter from a recognized institution and meet the following criteria:</p>
           <div class="highlight-box">
             <ul>
-              <li>Letter of acceptance from an accredited Irish institution</li>
-              <li>Proof of payment of tuition fees</li>
-              <li>Evidence of sufficient funds (€7,000 minimum)</li>
-              <li>Private medical insurance coverage</li>
-              <li>English language proficiency proof</li>
-              <li>Commitment to return home after studies</li>
+              <li>Acceptance by a DLI</li>
+              <li>Proof of funds to cover tuition, living expenses, and return travel</li>
+              <li>Clean criminal record and possibly a police clearance</li>
+              <li>Good health (medical examination may be required)</li>
+              <li>Intention to leave Canada after your studies</li>
             </ul>
           </div>
         </div>
 
+        <!-- Short-term Programs & Special Cases -->
         <div class="glass-card content-section">
-          <div class="section-icon">attach_money</div>
-          <h2>Financial Requirements</h2>
-          <p>You must demonstrate access to:</p>
-          <div class="highlight-box">
-            <ul>
-              <li>Course fees paid in full or evidence of funding source</li>
-              <li>Living expenses: at least €7,000 for one academic year</li>
-              <li>Additional €7,000 for each subsequent year</li>
-            </ul>
-          </div>
+          <div class="section-icon"> hourglass_empty</div>
+          <h2>Short-term Programs & Special Cases</h2>
+          <p>No permit is needed for programs lasting six months or less.</p>
+          <p>Certain family members of foreign diplomats or armed forces may be exempt from a study permit.</p>
         </div>
 
+        <!-- Extensions & Changes -->
         <div class="glass-card content-section">
-          <div class="section-icon">work</div>
-          <h2>Work Rights</h2>
-          <p>Non-EEA students can work up to 20 hours per week during term time and 40 hours per week during holidays (June-September and December 15-January 15).</p>
+          <div class="section-icon"> update</div>
+          <h2>Extensions & Changes</h2>
+          <p>To extend your permit or change your program, apply at least 30 days before expiry. If you lose your status, you can apply for restoration within 90 days, but you cannot study until approved.</p>
         </div>
 
+        <!-- Health, Work Rights & Family -->
         <div class="glass-card content-section">
-          <div class="section-icon">update</div>
-          <h2>Stay Back Option</h2>
-          <p>Ireland offers a Third Level Graduate Scheme allowing students to remain for up to 2 years after graduation to seek employment. Graduates with critical skills can transition to work permits and eventually permanent residency.</p>
+          <div class="section-icon"> favorite</div>
+          <h2>Health, Work Rights & Family</h2>
+          <p>Health coverage is provincial and varies; contact your institution for details. Students can work part-time on or off campus without a work permit, depending on your study program and status.</p>
+          <p>Spouses or partners may qualify for an open work permit, enabling them to work during your studies, while dependent children can study or work as permitted.</p>
         </div>
       </div>
     </div>
@@ -59,18 +58,19 @@ import MainLayout from '../../layouts/MainLayout.astro';
 
   <section class="cta-section section-padding bg-darker">
     <div class="container text-center">
-      <h2>Ready to Study in Ireland?</h2>
-      <p class="subtitle">Let our experts guide you through the Ireland student visa process.</p>
+      <h2>Need Help With Your Study Permit?</h2>
+      <p class="subtitle">Our experienced immigration team is ready to assist you at every step.</p>
       <div class="cta-buttons">
-        <a href="/contact" class="btn btn-primary">Get Started</a>
+        <a href="/contact" class="btn btn-primary">Contact Us Today</a>
       </div>
     </div>
   </section>
 </MainLayout>
 
 <style>
+  /* [Same styles as Visitor Visa template] */
   .page-header {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/student-permit/Ireland.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/student.jpg') center/cover no-repeat;
     border-bottom: 1px solid var(--border-light);
     padding-top: 150px;
     padding-bottom: 80px;
@@ -86,7 +86,7 @@ import MainLayout from '../../layouts/MainLayout.astro';
     text-transform: uppercase;
     margin-bottom: 16px;
     font-size: 0.9rem;
-    color: white;
+    color:whit;
   }
   .subtitle {
     margin-top: 20px;

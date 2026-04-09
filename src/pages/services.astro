@@ -6,37 +6,43 @@ const services = [
     icon: 'flight_takeoff',
     title: "VISITOR VISA",
     description: 'Complete guidance for temporary travel to Canada, including visa applications and electronic Travel Authorization (eTA) services.',
-    link: '/visitor-visa'
+    link: '/visitor-visa',
+    backgroundImage: '/visitor-vissa.jpg'
   },
   {
     icon: 'school',
     title: 'STUDY PERMIT',
-    description: 'Complete guidance for international students to obtain study permits and navigate Canadian education pathways.',
-    link: '/study-permit'
+    description: 'Complete guidance for international students to obtain study permits, including application support and understanding visa requirements.',
+    link: '/study-permit',
+    backgroundImage: '/student.jpg'
   },
   {
     icon: 'work',
     title: 'WORK VISA',
     description: 'Comprehensive support for various work permits, including employer-specific, open work permits, and Post-Graduation Work Permits (PGWP).',
-    link: '/work-visa'
+    link: '/work-visa',
+    backgroundImage: '/Work-Visa.jpg'
   },
   {
     icon: 'family_restroom',
     title: 'FAMILY SPONSORSHIP',
     description: 'Guidance for sponsoring spouses, partners, dependent children, and parents/grandparents through Super Visa and other family reunification programs.',
-    link: '/family-sponsorship'
+    link: '/family-sponsorship',
+    backgroundImage: '/family.png'
   },
   {
     icon: 'business_center',
     title: 'BUSINESS IMMIGRATION PATHWAYS',
-    description: 'Strategic guidance for entrepreneurs, investors, and self-employed individuals seeking to establish or expand their business in Canada.',
-    link: '/business-immigration'
+    description: 'Guidance for entrepreneurs, investors, and self-employed individuals to grow their business in Canada.',
+    link: '/business-immigration',
+    backgroundImage: '/business-immigration.jpg'
   },
   {
     icon: 'verified_user',
     title: 'PERMANENT RESIDENCY OPTIONS',
-    description: 'Comprehensive pathways to Canadian permanent residency, including Family Sponsorship, Economic Immigration, and Provincial Nominee Programs.',
-    link: '/permanent-residency'
+    description: 'Pathways to Canadian permanent residency via family, economic, and provincial programs.',
+    link: '/permanent-residency',
+    backgroundImage: '/permanent.png'
   }
 ];
 ---
@@ -55,17 +61,20 @@ const services = [
       <div class="grid services-grid">
         {services.map(service => (
           <a href={service.link || '#'} class="service-link">
-            <div class="glass-card service-card">
-              <div class="icon-wrapper">
-                <span class="material-icons">{service.icon}</span>
-              </div>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-              {service.link && (
-                <div class="card-arrow">
-                  <span class="material-icons">arrow_forward</span>
+            <div class="glass-card service-card" style={`background-image: url('${service.backgroundImage}')`}>
+              <div class="dark-overlay"></div>
+              <div class="card-content">
+                <div class="icon-wrapper">
+                  <span class="material-icons">{service.icon}</span>
                 </div>
-              )}
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+                {service.link && (
+                  <div class="card-arrow">
+                    <span class="material-icons">arrow_forward</span>
+                  </div>
+                )}
+              </div>
             </div>
           </a>
         ))}
@@ -112,6 +121,10 @@ const services = [
     padding-bottom: 80px;
   }
 
+  .page-header h1 {
+    color: white;
+  }
+
   .uppercase-label {
     display: inline-block;
     font-family: var(--font-heading);
@@ -120,12 +133,13 @@ const services = [
     text-transform: uppercase;
     margin-bottom: 16px;
     font-size: 0.9rem;
+    color: white;
   }
 
   .subtitle {
     margin-top: 20px;
     font-size: 1.25rem;
-    color: var(--text-muted);
+    color: white;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -150,33 +164,42 @@ const services = [
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     box-shadow: var(--card-shadow);
+    background-size: cover;
+    background-position: center;
+    min-height: 280px;
   }
 
-  .service-card::before {
-    content: '';
+  .dark-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(219, 39, 119, 0.05));
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: -1;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    transition: background 0.4s ease;
+  }
+
+  .card-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   .service-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.15);
+    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.25);
     border-color: var(--primary-pink);
   }
 
-  .service-card:hover::before {
-    opacity: 1;
+  .service-card:hover .dark-overlay {
+    background: rgba(0, 0, 0, 0.7);
   }
 
   .icon-wrapper {
-    background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(219, 39, 119, 0.05));
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(219, 39, 119, 0.15));
     width: 64px;
     height: 64px;
     display: flex;
@@ -184,14 +207,14 @@ const services = [
     justify-content: center;
     border-radius: 12px;
     margin-bottom: 24px;
-    border: 1px solid rgba(124, 58, 237, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
     position: relative;
   }
 
   .icon-wrapper .material-icons {
     font-size: 2rem;
-    color: var(--primary-purple);
+    color: white;
   }
 
   .icon-wrapper::after {
@@ -222,22 +245,23 @@ const services = [
     font-size: 1.5rem;
     font-weight: 600;
     transition: all 0.3s ease;
+    color: white;
   }
 
   .service-card p {
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.9);
     line-height: 1.6;
     margin-bottom: 0;
     transition: all 0.3s ease;
   }
 
   .service-card:hover h3 {
-    color: var(--primary-purple);
+    color: white;
     transform: translateX(4px);
   }
 
   .service-card:hover p {
-    color: var(--text-main);
+    color: rgba(255, 255, 255, 1);
   }
 
   .service-link {
@@ -250,7 +274,7 @@ const services = [
     position: absolute;
     bottom: 10px;
     right: 24px;
-    color: var(--primary-purple);
+    color: white;
     opacity: 0;
     transform: translateX(-10px);
     transition: all 0.3s ease;
@@ -281,11 +305,11 @@ const services = [
     text-align: left;
     position: relative;
     padding: 30px;
-    background: var(--white);
+    background: linear-gradient(135deg, #faf8ff 0%, #f5f0ff 100%);
     border-radius: 12px;
-    border: 1px solid var(--card-border);
+    border: 1px solid #e8e0f5;
     transition: var(--transition);
-    box-shadow: var(--card-shadow);
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.08);
   }
 
   .process-step:hover {
