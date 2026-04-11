@@ -7,24 +7,88 @@ import '../styles/global.css';
 interface Props {
 	title: string;
   description?: string;
+  canonical?: string;
+  ogImage?: string;
+  noindex?: boolean;
 }
 
-const { title, description = "Expert Immigration Services for Global Mobility" } = Astro.props;
+const { title, description = "Expert Immigration Services for Global Mobility", canonical, ogImage = "/logo.webp", noindex = false } = Astro.props;
+
+const siteUrl = "https://www.nirveevisa.com/";
+const currentPath = Astro.url.pathname;
+const canonicalUrl = canonical || `${siteUrl}${currentPath}`;
+const fullTitle = `${title} | Nirvee Visa Immigration Experts`;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" href="/logo.webp" />
 		<meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
-		<title>{title} | Premium Immigration</title>
+    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+    <meta property="og:site_name" content="Nirvee Visa & Immigration Experts" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalUrl} />
+    <meta property="twitter:title" content={fullTitle} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={`${siteUrl}${ogImage}`} />
+
+		<title>{fullTitle}</title>
+
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+    <!-- Preload critical fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Nirvee Visa & Immigration Experts Pvt Ltd",
+        "alternateName": "Nirvee Visa",
+        "url": "https://nirveevisa.com",
+        "logo": "https://nirveevisa.com/logo.webp",
+        "description": "Premium immigration consultancy services for Canada, Australia, Germany, UK, and New Zealand. 7+ years experience, 99% approval rate, 10,000+ successful clients.",
+        "foundingDate": "2017",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "No 131, Adiyapatham Road, Kokuvil East",
+          "addressLocality": "Kokuvil",
+          "addressRegion": "Jaffna",
+          "postalCode": "40000",
+          "addressCountry": "LK"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+49-176-74966603",
+          "contactType": "customer service",
+          "availableLanguage": ["English", "Tamil", "Sinhalese", "Urdu", "Hindi", "Punjabi", "Tagalog", "Ukrainian", "Russian", "Italian", "Albanian", "Portuguese"]
+        },
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61586937637733"
+        ]
+      }
+    </script>
+
     <ClientRouter />
 	</head>
 	<body>
